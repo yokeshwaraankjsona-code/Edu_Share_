@@ -4,6 +4,7 @@ Handles OTP generation, email sending, verification, and user login.
 """
 
 # 1. Standard library imports come first
+import os
 import smtplib
 import random
 from email.mime.text import MIMEText
@@ -103,6 +104,7 @@ def login():
     return jsonify({"error": "Invalid email or password"}), 401
 @app.route("/")
 def home():
-     return send_from_directory("static", "index.html")
+     return send_from_directory(app.static_folder, "index.html")
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=os.getenv("PORT", 5000))
+
