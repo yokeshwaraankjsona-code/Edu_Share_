@@ -61,6 +61,7 @@ def send_otp():
     otp_store[email] = otp
 
     try:
+        print("BREVO KEY READ BY BACKEND:", os.getenv("BREVO_API_KEY"))
         send_otp_email(email, otp)
         return jsonify({"message": "OTP sent successfully!"})
     except Exception as e:
@@ -110,3 +111,4 @@ def home():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=os.getenv("PORT", 5000))
+
