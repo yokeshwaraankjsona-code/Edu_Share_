@@ -90,7 +90,7 @@
     if(!email) { alert("Please enter an email first."); return; }
 
     try {
-      const res = await fetch("https://edu-share-1bfx.onrender.com/send-otp", {
+      const res = await fetch("https://edu-share-1-ghxf.onrender.com/send-otp", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({email})
@@ -115,7 +115,7 @@
     }
 
     try {
-      const res = await fetch("https://edu-share-1bfx.onrender.com/verify-otp", {
+      const res = await fetch("https://edu-share-1-ghxf.onrender.com/verify-otp", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
@@ -144,3 +144,4 @@
 </body>
 
 </html>
+
