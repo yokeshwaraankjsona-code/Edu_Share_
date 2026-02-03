@@ -33,7 +33,7 @@ def send_otp_email(to_email, otp):
         "content-type": "application/json"
     }
     data = {
-        "sender": {"name": "EduShare", "email": "no-reply@edushare.com"},
+        "sender": {"name": "EduShare", "email": "edushare.2026@gmail.com"},
         "to": [{"email": to_email}],
         "subject": "Your OTP Code",
         "htmlContent": f"<p>Your OTP is: <strong>{otp}</strong></p>"
@@ -111,4 +111,5 @@ def home():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=os.getenv("PORT", 5000))
+
 
